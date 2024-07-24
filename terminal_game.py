@@ -14,15 +14,16 @@ class Terminal_game():
         self.max_attempts = max_attempts
         self.attempts_left = max_attempts
         self.game_rows = 10
+        self.display = ""
 
 
     def display_words(self):
         prevline = "right"
         os.system('clear')
-        print("=--------------------------------------------------------------=\n"
-              "|                      Password Required.                      |\n"
-              "|                   Attempts Remaining: # # # #                |\n"
-              "|                                                              |\n", end="")
+        self.display += ("=--------------------------------------------------------------=\n"
+                            "|                      Password Required.                      |\n"
+                            "|                   Attempts Remaining: # # # #                |\n"
+                            "|                                                              |\n")
         for i in range(self.game_rows):
             if prevline == "right":
                 randhex1 = "0x0" + str(hex(random.randint(1, 255))).replace("0x", "").upper().zfill(2)
@@ -33,7 +34,7 @@ class Terminal_game():
                 
                 word = random.choice([x for x in self.words if x not in self.used_words])
                 self.used_words.append(word)
-                print(f"|     {randhex1}    {filler1}{word}{filler2}         {randhex2}    {filler3}      |")
+                self.display += (f"|     {randhex1}    {filler1}{word}{filler2}         {randhex2}    {filler3}      |\n")
             
                 prevline = "left"
             
@@ -46,14 +47,14 @@ class Terminal_game():
                 
                 word = random.choice([x for x in self.words if x not in self.used_words])
                 self.used_words.append(word)
-                print(f"|     {randhex1}    {filler3}         {randhex2}    {filler1}{word}{filler2}      |")
+                self.display += (f"|     {randhex1}    {filler3}         {randhex2}    {filler1}{word}{filler2}      |\n")
                 
                 prevline = "right"
-        print()
 
 
     def play(self):
         self.display_words()
+        print(self.display)
         while self.attempts_left > 0:
             guess = input(">").strip().upper()
             print()
