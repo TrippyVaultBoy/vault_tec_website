@@ -1,7 +1,7 @@
 import random
 
 class Terminal_game():
-    def __init__(self, words, max_attempts=4):
+    def __init__(self, max_attempts=4):
         self.words = ["WOOD", "SPOT", "GETS", "WHEN", "POTS",
                       "FLAT", "DRAG", "WEAK", "HUTS", "EGOS"]
         self.used_words = []
@@ -29,17 +29,10 @@ class Terminal_game():
                 filler2 = ''.join(random.choices(self.filler, k=4))
                 filler3 = ''.join(random.choices(self.filler, k=12)) 
                 
-                if correct_word_used == 1:
-                    word = random.choice([x for x in self.words if x != self.correct_word and x not in self.used_words])
-                    self.used_words.append(word)
-                    print(f"| {randhex1}    {filler1}{word}{filler2}    {randhex2}    {filler3}  |")
-                
-                elif correct_word_used == 0:
-                    word = random.choice([x for x in self.words if x not in self.used_words])
-                    self.used_words.append(word)
-                    if word == self.correct_word:
-                        correct_word_used = 1
-                    print(f"| {randhex1}    {filler1}{word}{filler2}    {randhex2}    {filler3}  |") 
+                word = random.choice([x for x in self.words if x not in self.used_words])
+                self.used_words.append(word)
+                print(f"| {randhex1}    {filler1}{word}{filler2}    {randhex2}    {filler3}  |")
+            
                 prevline = "left"
             
             elif prevline == "left":
@@ -49,17 +42,10 @@ class Terminal_game():
                 filler2 = ''.join(random.choices(self.filler, k=4))
                 filler3 = ''.join(random.choices(self.filler, k=12))
                 
-                if correct_word_used == 1:
-                    word = random.choice([x for x in self.words if x != self.correct_word and x not in self.used_words])
-                    self.used_words.append(word)
-                    print(f"| {randhex1}    {filler3}    {randhex2}    {filler1}{word}{filler2}  |")
+                word = random.choice([x for x in self.words if x not in self.used_words])
+                self.used_words.append(word)
+                print(f"| {randhex1}    {filler3}    {randhex2}    {filler1}{word}{filler2}  |")
                 
-                elif correct_word_used == 0:
-                    word = random.choice([x for x in self.words if x not in self.used_words])
-                    self.used_words.append(word)
-                    if word == self.correct_word:
-                        correct_word_used = 1
-                    print(f"| {randhex1}    {filler3}    {randhex2}    {filler1}{word}{filler2}  |")
                 prevline = "right"
 
 
