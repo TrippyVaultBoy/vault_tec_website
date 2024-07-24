@@ -5,6 +5,7 @@ import os
 from terminal_game import Terminal_game
 
 class Robco_term(cmd.Cmd):
+    os.system("clear")
     intro = (
         "=--------------------------------------------------------------=\n"
         "|          Welcome to ROBCO Industries (TM) Termlink           |\n"

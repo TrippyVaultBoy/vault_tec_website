@@ -21,7 +21,7 @@ class Terminal_game():
         os.system('clear')
         print("=--------------------------------------------------------------=\n"
               "|                      Password Required.                      |\n"
-              "|                   Attempts Remaining: ####                   |\n"
+              "|                   Attempts Remaining: # # # #                |\n"
               "|                                                              |\n", end="")
         for i in range(self.game_rows):
             if prevline == "right":
@@ -72,9 +72,9 @@ class Terminal_game():
                 print("| >Entry denied.                                               |")
                 print(f"| >Likeness={likeness}                                                  |")
                 if self.attempts_left == 3:
-                    print("| >Attempts Remaining: ###                                     |")
+                    print("| >Attempts Remaining: # # #                                   |")
                 if self.attempts_left == 2:
-                    print("| >Attempts Remaining: ##                                      |")
+                    print("| >Attempts Remaining: # #                                     |")
                 if self.attempts_left == 1:
                     print("| >Attempts Remaining: #                                       |")
                 print()
