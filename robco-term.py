@@ -11,9 +11,15 @@ class Robco_term(cmd.Cmd):
         "|--------------------------------------------------------------|\n"
         "|  last login: 10/23/77 15:29:01                               |\n"
         "|                                                              |\n"
-    )
+        "|                      Enter \"Start\"                           |\n"
+        "|                                                              |\n"
+        )
 
     prompt = "cmnd: "
+
+    def do_Start(self, arg):
+        """Start the terminal game"""
+        self.do_game(arg)
 
     def do_greet(self, arg):
         """Greet the user with the provided name"""
