@@ -1,4 +1,5 @@
 import random
+import os
 
 class Terminal_game():
     def __init__(self, max_attempts=4):
@@ -17,13 +18,15 @@ class Terminal_game():
 
     def display_words(self):
         prevline = "right"
-        print()
-        print("Password Required")
-        print()
+        os.system('clear')
+        print("=--------------------------------------------------------------=\n"
+              "|                      Password Required.                      |\n"
+              "|                   Attempts Remaining: ####                   |\n"
+              "|                                                              |\n", end="")
         for i in range(self.game_rows):
             if prevline == "right":
-                randhex1 = "0x0" + str(hex(random.randint(1, 255))).replace("0x", "").upper()
-                randhex2 = "0x0" + str(hex(random.randint(1, 255))).replace("0x", "").upper()
+                randhex1 = "0x0" + str(hex(random.randint(1, 255))).replace("0x", "").upper().zfill(2)
+                randhex2 = "0x0" + str(hex(random.randint(1, 255))).replace("0x", "").upper().zfill(2)
                 filler1 = ''.join(random.choices(self.filler, k=4))
                 filler2 = ''.join(random.choices(self.filler, k=4))
                 filler3 = ''.join(random.choices(self.filler, k=12)) 
@@ -35,8 +38,8 @@ class Terminal_game():
                 prevline = "left"
             
             elif prevline == "left":
-                randhex1 = "0x0" + str(hex(random.randint(1, 255))).replace("0x", "").upper()
-                randhex2 = "0x0" + str(hex(random.randint(1, 255))).replace("0x", "").upper()
+                randhex1 = "0x0" + str(hex(random.randint(1, 255))).replace("0x", "").upper().zfill(2)
+                randhex2 = "0x0" + str(hex(random.randint(1, 255))).replace("0x", "").upper().zfill(2)
                 filler1 = ''.join(random.choices(self.filler, k=4))
                 filler2 = ''.join(random.choices(self.filler, k=4))
                 filler3 = ''.join(random.choices(self.filler, k=12))
@@ -46,25 +49,35 @@ class Terminal_game():
                 print(f"|     {randhex1}    {filler3}         {randhex2}    {filler1}{word}{filler2}      |")
                 
                 prevline = "right"
+        print()
 
 
     def play(self):
         self.display_words()
         while self.attempts_left > 0:
             guess = input(">").strip().upper()
-            
-            if guess == self.correct_word:
+            print()
+
+            if guess not in self.words:
                 print()
-                print("Password Accepted.")
+
+            if guess == self.correct_word:
+                print("|                      Password Accepted.                      |\n"
+                      "|                       Access Granted.                        |\n")
                 return True
             
-            else:
+            elif guess != self.correct_word and guess in self.words:
                 self.attempts_left -= 1
                 likeness = self.likeness(self.correct_word, guess)
-                print(">Attempts Remaining: ", self.attempts_left)
-                print(f">{guess}")
-                print(">Entry denied.")
-                print(f">Likeness={likeness}")
+                print("| >Entry denied.                                               |")
+                print(f"| >Likeness={likeness}                                                  |")
+                if self.attempts_left == 3:
+                    print("| >Attempts Remaining: ###                                     |")
+                if self.attempts_left == 2:
+                    print("| >Attempts Remaining: ##                                      |")
+                if self.attempts_left == 1:
+                    print("| >Attempts Remaining: #                                       |")
+                print()
         
         print("Out of attempts! Correct password: ", self.correct_word)
         return False
@@ -76,6 +89,6 @@ class Terminal_game():
 
         for i in range(len(word1)):
             if word1[i] == word2[i]:
-                likeness =+ 1
+                likeness += 1
 
         return likeness
