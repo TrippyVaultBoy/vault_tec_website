@@ -19,7 +19,7 @@ class Terminal_game():
 
     def display_words(self):
         prevline = "right"
-        os.system('clear')
+        os.system('cls')
         self.display += ("=--------------------------------------------------------------=\n"
                             "|                      Password Required.                      |\n"
                             "|                   Attempts Remaining: # # # #                |\n"
