@@ -19,11 +19,16 @@ class Terminal_game():
 
     def display_words(self):
         prevline = "right"
-        os.system('cls')
-        self.display += ("=--------------------------------------------------------------=\n"
-                            "|                      Password Required.                      |\n"
-                            "|                   Attempts Remaining: # # # #                |\n"
-                            "|                                                              |\n")
+        os.system('clear')
+        self.display += ("=------------------------------------------------------------------------------=\n"
+                         "|                 Welcome to ROBCO Industries (TM) Termlink                    |\n"
+                         "|------------------------------------------------------------------------------|\n"
+                         "|                                                                              |\n" 
+                         "|                             Password Required.                               |\n"
+                         "|                         Attempts Remaining: # # # #                          |\n"
+                         "|                                                                              |\n"
+                         "|                                                                              |\n")
+        
         for i in range(self.game_rows):
             if prevline == "right":
                 randhex1 = "0x0" + str(hex(random.randint(1, 255))).replace("0x", "").upper().zfill(2)
@@ -34,7 +39,7 @@ class Terminal_game():
                 
                 word = random.choice([x for x in self.words if x not in self.used_words])
                 self.used_words.append(word)
-                self.display += (f"|     {randhex1}    {filler1}{word}{filler2}         {randhex2}    {filler3}      |\n")
+                self.display += (f"|            {randhex1}    {filler1}{word}{filler2}           {randhex2}    {filler3}             |\n")
             
                 prevline = "left"
             
@@ -47,9 +52,13 @@ class Terminal_game():
                 
                 word = random.choice([x for x in self.words if x not in self.used_words])
                 self.used_words.append(word)
-                self.display += (f"|     {randhex1}    {filler3}         {randhex2}    {filler1}{word}{filler2}      |\n")
-                
+                self.display += (f"|            {randhex1}    {filler3}           {randhex2}    {filler1}{word}{filler2}             |\n")
+
                 prevline = "right"
+
+        self.display += ("|                                                                              |\n"
+                         "|                                                                              |\n"
+                         "=------------------------------------------------------------------------------=\n")
 
 
     def play(self):
@@ -63,8 +72,28 @@ class Terminal_game():
                 print()
 
             if guess == self.correct_word:
-                print("|                      Password Accepted.                      |\n"
-                      "|                       Access Granted.                        |\n")
+                os.system('clear')
+                print("=------------------------------------------------------------------------------=\n"
+                     "|          Welcome to ROBCO Industries (TM) Termlink                           |\n"
+                     "|------------------------------------------------------------------------------|\n"
+                     "|                                                                              |\n"
+                     "|                               Password Accepted.                             |\n"
+                     "|                                Access granted.                               |\n"
+                     "|                                                                              |\n"
+                     "|                                                                              |\n"
+                     "|                                   #######                                    |\n"
+                     "|                                ###       ###                                 |\n"
+                     "|                  ###############           ###############                   |\n"
+                     "|                             ##     #####     ##                              |\n"
+                     "|                             ##   #########   ##                              |\n"
+                     "|         #####################-   #########   -#####################          |\n"
+                     "|                             ##   #########   ##                              |\n"
+                     "|                             ##     #####     ##                              |\n"
+                     "|                  ###############           ###############                   |\n"
+                     "|                                ###       ###                                 |\n"
+                     "|                                   #######                                    |\n"
+                     "|                                                                              |\n"
+                     "=------------------------------------------------------------------------------=\n")
                 return True
             
             elif guess != self.correct_word and guess in self.words:
