@@ -3,16 +3,16 @@ import cmd
 from datetime import datetime
 import os
 from terminal_game import Terminal_game
+import time
 
 class Robco_term(cmd.Cmd):
     os.system("clear")
-    intro = (
+    print(
         "=------------------------------------------------------------------------------=\n"
-        "|          Welcome to ROBCO Industries (TM) Termlink                           |\n"
+        "|                  Welcome to ROBCO Industries (TM) Termlink                   |\n"
         "|------------------------------------------------------------------------------|\n"
         "|  last login: 10/23/77 15:29:01                                               |\n"
         "|                                                                              |\n"
-        "|                                Enter \"Start\"                                 |\n"
         "|                                                                              |\n"
         "|                                                                              |\n"
         "|                                   #######                                    |\n"
@@ -27,14 +27,16 @@ class Robco_term(cmd.Cmd):
         "|                                ###       ###                                 |\n"
         "|                                   #######                                    |\n"
         "|                                                                              |\n"
+        "|                                                                              |\n"
         "=------------------------------------------------------------------------------=\n"
         )
+    
+    time.sleep(2)
 
     prompt = "cmnd: "
 
-    def do_Start(self, arg):
-        """Start the terminal game"""
-        self.do_game(arg)
+    game = Terminal_game()
+    game.play()
 
     def do_greet(self, arg):
         """Greet the user with the provided name"""
