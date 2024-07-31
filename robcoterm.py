@@ -3,6 +3,7 @@ import cmd
 from datetime import datetime
 import os
 from terminal_game import Terminal_game
+from terminal_dir import Terminal_dir
 import time
 
 class Robco_term(cmd.Cmd):
@@ -47,7 +48,8 @@ class Robco_term(cmd.Cmd):
     game.play()
 
     def do_dir(self):
-        pass
+        dir = Terminal_dir()
+        dir.display()
 
     def do_greet(self, arg):
         """Greet the user with the provided name"""
