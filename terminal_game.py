@@ -25,7 +25,7 @@ class Terminal_game():
                          "|                  Welcome to ROBCO Industries (TM) Termlink                   |\n"
                          "|------------------------------------------------------------------------------|\n"
                          "|                                                                              |\n" 
-                         "|                             Password Required.                               |\n"
+                         "|                              Password Required.                              |\n"
                          "|                         Attempts Remaining: # # # #                          |\n"
                          "|                                                                              |\n"
                          "|                                                                              |\n")
@@ -104,9 +104,9 @@ class Terminal_game():
 
                 screen = list(self.display)
                 if self.attempts_left == 3:
-                    screen[405:485] = "|                            Attempts Remaining: # # #                         |"
+                    screen[405:485] = "|                          Attempts Remaining: # # #                           |"
                 if self.attempts_left == 2:
-                    screen[405:485] = "|                            Attempts Remaining: # #                           |"
+                    screen[405:485] = "|                           Attempts Remaining: # #                            |"
                 if self.attempts_left == 1:
                     screen[405:485] = "|                            Attempts Remaining: #                             |"
                 screen[1278:1282] = f"{guess}"
