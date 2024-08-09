@@ -6,9 +6,12 @@
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.jpeg">
         <link rel="stylesheet" href="styles/header.css">
         <link rel="stylesheet" href="styles/body.css">
+        <link rel="stylesheet" href="styles/vault_container.css">
         <link rel="stylesheet" href="styles/footer.css">
     </head>
     <body> 
+        
+        <!-- Header -->
         <header>
             <div class="border_bar"></div>
             <div class="border_content"></div>
@@ -17,6 +20,7 @@
             <div class="border_bar"></div>
         </header>
         
+        <!-- Navigation Bar -->
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -29,20 +33,72 @@
             </ul>
         </nav>
         
+        <!-- Billboard -->
         <div class="billboard">
             <div class="billboard_text">Prepared for the Future!</div>
             <a href="reserve.html" class="cta_button">Reserve Now!</a>
         </div>
        
+        <!-- Slogan -->
         <div class="border_bar"></div>
-        <section class="about_us">
-            <h2>What is VAULT-TEC?</h2>
-            <p>Vault-Tec is committed to preparing you for the future by providing safe and secure vaults for all of humanity.</p>
-        </section>
+        <div class="slogan">
+            <h2>Better Living <span class="underground">Underground</span></h2>
+        </div>
         <div class="border_bar"></div>
 
-        <section id="partners">
-            <div class="section_content">
+        <section class="vaults_overview">
+            <h2>Discover the Comfort and Security of Our Vaults</h2>
+            <div class="vault_container">
+                <div class="vault_item">
+                    <div class="vault_image">
+                        <img src="images/vault_comfort.png">
+                    </div>
+                    <div class="vault_description">
+                        <h3>Comfortable Living Quarters</h3>
+                        <p>Experience unparalleled comfort in our vaults, 
+                            where spacious living areas blend with the latest 
+                            amenities. Courtesy of Radiation King <sup class="tm">TM</sup>, each 
+                            vault is a sanctuary designed to elevate your 
+                            quality of life, ensuring that every day 
+                            feels like a retreat.</p>
+                    </div>
+                </div>
+                <div class="vault_item_reversed">
+                    <div class="vault_description">
+                        <h3>State-of-the-art Technology</h3>
+                        <p>Step into the future with vaults powered by the 
+                            advanced technologies of RobCo Industries <sup class="tm">TM</sup> and 
+                            General Atomics International <sup class="tm">TM</sup>. From top-tier 
+                            personal computing solutions with the Pip-Boy <sup class="tm">TM</sup> to cutting-edge air filtration 
+                            and 24/7 Mr. Handy <sup class="tm">TM</sup> maintenance, our vaults are 
+                            equipped to safeguard and serve your every need 
+                            with precision and reliability.</p>
+                    </div>
+                    <div class="vault_image">
+                        <img src="images/vault_security2.png">
+                    </div>
+                </div>
+                <div class="vault_item">
+                    <div class="vault_image">
+                        <img src="images/vault_community.png">
+                    </div>
+                    <div class="vault_description">
+                        <h3>Community and Well-being</h3>
+                        <p>Embrace life in a close-knit community where 
+                            well-being is paramount. Our vaults are equipped 
+                            with state-of-the-art facilities designed to foster 
+                            social interaction, relaxation, and mental health, 
+                            ensuring that every resident thrives in a vibrant 
+                            and supportive environment.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border_bar"></div>
+        </section>
+
+        <!-- Partners -->
+        <div class="partners">
+            <div class="partners_content">
                 <h2>Our Partners</h2>
                 <div class="logo_grid">
                     <div class="grid-item"><img src="images/robco_logo.png" alt="Robco Industries"></div>
@@ -55,8 +111,11 @@
             <div class="vaultboy_sponsor">
                 <img src="images/vaultboy_nukacola.png" alt="VAULT_TEC loves our sponsors">
             </div>
-        </section>
+        </div>
+
     </body>
+    
+    <!-- Footer -->
     <footer>
         <div class="footer_bar"></div>
         <div class="footer_content">
