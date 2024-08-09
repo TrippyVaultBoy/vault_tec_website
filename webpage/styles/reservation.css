@@ -1,0 +1,102 @@
+body {
+    background-color: whitesmoke;
+    background-image: url("../images/vault_blueprint.jpeg");
+    background-size: fill;
+    background-position: center;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #0066b1;
+    border-radius: 5px;
+    color: #fff773;
+}
+
+form fieldset {
+    margin-bottom: 20px;
+}
+
+form legend {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+form label {
+    margin-bottom: 5px;
+}
+
+form input, form select, form textarea {
+    width: 98%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+}
+
+form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.agreement_container {
+    display: flex;
+    justify-content: center;
+}
+
+.agreement_label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.agreement input[type="checkbox"] {
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+    align-items: center;
+}
+
+a {
+    color: #fff773;
+    padding-left: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #fff773;
+    text-decoration: underline;
+}
+
+.submit_button {
+    text-align: center;
+}
+
+form button {
+    background-color: #fff773;
+    color: #0066b1;
+    padding: 10px 20px;
+    font-size: 25px;
+    font-family: 'Monofonto';
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.vaultboy_business {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.vaultboy_business img {
+    position: realative;
+    bottom: 0px;
+    right: 10px;
+    width: 350px;
+    height: auto;
+}
