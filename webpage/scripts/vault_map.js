@@ -9,7 +9,7 @@ attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreet
 
 // Custom Vault icon
 const customIcon = L.icon({
-    iconUrl: './images/vault_icon.png',
+    iconUrl: './images/vault_icon_blue.png',
     iconSize: [35, 35],
 })
 
