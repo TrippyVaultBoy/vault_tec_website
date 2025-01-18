@@ -8,8 +8,19 @@
         <link rel="stylesheet" href="styles/header.css">
         <link rel="stylesheet" href="styles/body.css">
         <link rel="stylesheet" href="styles/footer.css">
+        
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+              integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+              crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+                integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+                crossorigin=""></script>
+
+        <link rel="stylesheet" href="styles/vault_map.css">
     </head>
+    
     <body>
+        <!-- Header -->
         <header>
             <div class="border_bar"></div>
             <div class="border_content"></div>
@@ -18,6 +29,7 @@
             <div class="border_bar"></div>
         </header>
 
+        <!-- Nav Bar -->
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -30,19 +42,20 @@
             </ul>
         </nav>
 
-        <body>
-            <section>
-              <svg
-                xmlns:dc="http://purl.org/dc/elements/1.1/"
-                xmlns:cc="http://creativecommons.org/ns#"
-                xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-              >
-                ... all the country paths are here ...
-              </svg>
-            </section>
-          </body>
+        <!-- Vault Map -->
+        <div class="map_container">
+            <div id="map"></div>
+            <div class="vault_info_container">
+                <h2>Vault Information Directory</h2>
+                <text>Placeholder text</text>
+            </div>
+        </div>
 
-        <footer>
+        <!-- Vault Map JavaScript -->
+        <script src="./scripts/vault_map.js"></script>
+
+        <!-- Footer -->
+        <footer class="footer">
             <div class="footer_bar"></div>
             <div class="footer_content">
                 <p class="trademark">
