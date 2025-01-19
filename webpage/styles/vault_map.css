@@ -8,6 +8,11 @@ body {
     bottom: 0;
 }
 
+.repconn_logo {
+    position: absolute;
+    left: 50px;
+}
+
 .map_container {
     display: flex;
     width: 100vw;
