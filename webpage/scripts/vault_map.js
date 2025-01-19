@@ -3,7 +3,7 @@ const map = L.map('map', {
     zoomSnap: 0.5,
     zoomDelta: 0.25,
 });
-map.setView([39.06, -94.61], 4);
+map.setView([39.10, -96.75], 4.5);
 
 // Creating tile layer
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -12,24 +12,34 @@ attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreet
 
 // Custom Vault icon
 const vaultIcon_Blue = L.icon({
-    iconUrl: './images/vault_icon_blue.png',
+    iconUrl: './images/markers/vault_icon_blue.png',
     iconSize: [35, 35],
 });
 
 const vaultIcon_Yellow = L.icon({
-    iconUrl: './images/vault_icon_yellow.png',
+    iconUrl: './images/markers/vault_icon_yellow.png',
     iconSize: [35, 35],
 });
 
 const vtu_icon = L.icon({
-    iconUrl: './images/vtu.png',
+    iconUrl: './images/markers/vtu.png',
     iconSize: [35, 35],
 });
 
 const demo_vault_blue = L.icon({
-    iconUrl: './images/demo_vault_blue.png',
+    iconUrl: './images/markers/demo_vault.png',
     iconSize: [70, 35],
-})
+});
+
+const bottles_blue = L.icon({
+    iconUrl: './images/markers/bottles_red.png',
+    iconSize: [35, 35],
+});
+
+const museumIcon = L.icon({
+    iconUrl: './images/markers/museum.png',
+    iconSize: [35, 35],
+});
 
 // Vault Data
 const data = {
@@ -151,5 +161,41 @@ demo_marker.on('click', function() {
         <h3>Demonstration Vault</h3>
         <h3>Location:</h3>
         <h3>Los Angeles, CA</h3>
+    `;
+});
+
+// Across The Stars Marker Creation
+const nuka_world_marker = L.marker([42.04031, -72.61351], {
+    title: "Nuka World: Across the Stars",
+    icon: bottles_blue,
+})
+.bindPopup(`<h2>Nuka World: Across the Stars</h2>`)
+.addTo(map);
+
+nuka_world_marker.on('click', function() {
+    document.getElementById('vault_title').textContent = "Nuka World: Across the Stars";
+    document.getElementById('info_grid').innerHTML = `
+        <h3>Type:</h3>
+        <h3>Demonstration Vault</h3>
+        <h3>Location:</h3>
+        <h3>Nuka World</h3>
+    `;
+});
+
+// Vault-Tec's Vault of Tomorrow Marker Creation
+const vault_of_tommorow = L.marker([38.888077, -77.019836], {
+    title: "Vault-Tec's Vault of Tomorrow",
+    icon: museumIcon,
+})
+.bindPopup(`<h2>Vault-Tec's Vault of Tomorrow</h2>`)
+.addTo(map);
+
+vault_of_tommorow.on('click', function() {
+    document.getElementById('vault_title').textContent = "Vault-Tec's Vault of Tomorrow";
+    document.getElementById('info_grid').innerHTML = `
+        <h3>Type:</h3>
+        <h3>Demonstration Vault</h3>
+        <h3>Location:</h3>
+        <h3>Museum of Technology</h3>
     `;
 });
