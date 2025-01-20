@@ -37,7 +37,7 @@ const bottles_blue = L.icon({
 });
 
 const museumIcon = L.icon({
-    iconUrl: './images/markers/museum.png',
+    iconUrl: './images/markers/museum_Yellow.png',
     iconSize: [35, 35],
 });
 
@@ -283,6 +283,13 @@ for (let key in data) {
             <h3>Capacity:</h3>
             <h3>${vault.capacity}</h3>
         `;
+    });
+
+    marker.on('mouseover', function() {
+        marker.setIcon(vaultIcon_Yellow);
+    });
+    marker.on('mouseout', function() {
+        marker.setIcon(vaultIcon_Blue);
     });
 }
 
