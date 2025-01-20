@@ -22,12 +22,14 @@ body {
 #map {
     width: 60%;
     height: auto;
+    border-radius: 1%;
 }
 
 .vault_info_container {
     width: 40%;
     height: 100%;
     text-align: center;
+    justify-content: center;
 }
 
 #info_grid {
